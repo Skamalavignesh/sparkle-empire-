@@ -26,21 +26,24 @@
   .serif{font-family:Cinzel,serif;letter-spacing:.06em}
 
   /* nav */
-  header{position:sticky;top:0;z-index:50;background:rgba(15,26,44,.88);backdrop-filter:blur(10px);border-bottom:1px solid rgba(212,169,79,.18)}
-  .nav{display:flex;align-items:center;justify-content:space-between;height:68px}
+  header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:2px solid var(--gold);box-shadow:0 4px 18px rgba(15,26,44,.12)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
   .brand{display:flex;align-items:center;gap:10px}
-  .brand img{width:42px;height:42px;border-radius:50%;object-fit:cover}
-  .brand span{font-family:Cinzel,serif;font-weight:700;font-size:1.05rem;letter-spacing:.12em}
-  .links{display:flex;gap:28px;font-size:.88rem;font-weight:500;letter-spacing:.04em}
-  .links a{opacity:.85;transition:.2s}
-  .links a:hover{opacity:1;color:var(--gold-light)}
+  .brand img{width:44px;height:44px;border-radius:50%;object-fit:cover}
+  .brand span{font-family:Cinzel,serif;font-weight:700;font-size:1.08rem;letter-spacing:.12em;color:var(--navy)}
+  .links{display:flex;gap:8px;font-size:.9rem;font-weight:700;letter-spacing:.04em}
+  .links a{position:relative;color:var(--navy);padding:9px 18px;border-radius:999px;transition:transform .25s cubic-bezier(.34,1.56,.64,1),background .25s,color .25s,box-shadow .25s}
+  .links a:hover,.links a:focus-visible{background:linear-gradient(135deg,var(--gold-light),var(--gold) 55%,var(--gold-dark));color:var(--navy-ink);transform:translateY(-3px) scale(1.08);box-shadow:0 8px 20px rgba(212,169,79,.45);outline:none}
   .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.9rem;letter-spacing:.03em;transition:.25s;cursor:pointer;border:0}
   .btn-gold{background:linear-gradient(135deg,var(--gold-light),var(--gold) 50%,var(--gold-dark));color:var(--navy-ink);box-shadow:0 6px 24px rgba(212,169,79,.25)}
   .btn-gold:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(212,169,79,.4)}
+  header .btn-gold{font-weight:700;transition:transform .25s cubic-bezier(.34,1.56,.64,1),box-shadow .25s}
+  header .btn-gold:hover{transform:translateY(-3px) scale(1.08);box-shadow:0 10px 26px rgba(212,169,79,.55)}
   .btn-line{border:1px solid var(--gold);color:var(--gold-light)}
   .btn-line:hover{background:rgba(212,169,79,.1)}
   .btn svg{width:18px;height:18px}
-  .menu-btn{display:none;background:none;border:0;color:var(--gold-light);font-size:1.6rem;cursor:pointer}
+  .menu-btn{display:none;background:none;border:0;color:var(--navy);font-weight:700;font-size:1.6rem;cursor:pointer;width:44px;height:44px;border-radius:50%;transition:.25s}
+  .menu-btn:hover{background:var(--gold);color:var(--navy-ink);transform:scale(1.08)}
 
   /* hero */
   .hero{position:relative;background:radial-gradient(ellipse at 50% 35%,var(--navy) 0%,var(--navy) 40%,var(--navy-deep) 100%);text-align:center;padding:70px 0 90px;overflow:hidden}
@@ -135,9 +138,10 @@
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.hero::before,.wa-float{animation:none}}
 
   @media (max-width:860px){
-    .links{position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy-ink);border-bottom:1px solid rgba(212,169,79,.2);display:none}
+    .links{position:absolute;top:72px;left:0;right:0;flex-direction:column;gap:6px;padding:12px 16px 16px;background:#fff;border-bottom:2px solid var(--gold);box-shadow:0 10px 20px rgba(15,26,44,.12);display:none}
     .links.open{display:flex}
-    .links a{padding:14px 20px;border-top:1px solid rgba(255,255,255,.05)}
+    .links a{padding:12px 18px}
+    .links a:hover,.links a:focus-visible{transform:scale(1.03)}
     .menu-btn{display:block}
     .nav .btn{display:none}
     .about{grid-template-columns:1fr}
@@ -149,7 +153,7 @@
 
 <header>
   <div class="wrap nav">
-    <a href="#top" class="brand"><img src="assets/emblem.jpg" alt="Sparkle Empire emblem"><span class="gold-text">SPARKLE EMPIRE</span></a>
+    <a href="#top" class="brand"><img src="assets/emblem.jpg" alt="Sparkle Empire emblem"><span>SPARKLE EMPIRE</span></a>
     <nav class="links" id="links">
       <a href="#collections">Collections</a>
       <a href="#featured">Featured</a>
