@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sparkle Empire Colour Palette</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --midnight:#06132A; --royal:#0B1F3A; --card:#112B46; --slate:#22344C;
+    --gold:#C9A04A; --antique:#A8853E; --champagne:#F1DC96; --soft:#D8C195;
+    --ivory:#FBF7EE; --mist:#EFE6D2; --white:#FFFFFF; --grey:#6E6857;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Montserrat,system-ui,sans-serif;background:var(--ivory);color:var(--royal);line-height:1.55}
+  .wrap{width:min(1100px,100% - 32px);margin-inline:auto}
+  .top{background:linear-gradient(150deg,var(--card),var(--midnight));color:var(--champagne);text-align:center;padding:46px 0 40px}
+  .top img{width:min(300px,80%);margin:0 auto 10px;display:block;border-radius:12px}
+  .top h1{font-family:Cinzel,serif;letter-spacing:.08em;font-size:clamp(1.4rem,3.4vw,2.1rem)}
+  .top p{color:var(--soft);font-size:.92rem;margin-top:6px}
+  h2{font-family:Cinzel,serif;font-size:1.25rem;letter-spacing:.05em;margin:40px 0 6px}
+  .lead{color:var(--grey);font-size:.9rem;margin-bottom:18px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px}
+  .sw{background:var(--white);border-radius:16px;overflow:hidden;border:1px solid var(--mist);box-shadow:0 6px 18px rgba(6,19,42,.06)}
+  .chip{height:120px;display:flex;align-items:flex-end;padding:12px 14px;font-family:Cinzel,serif;font-weight:700;letter-spacing:.06em;font-size:.95rem}
+  .sw .info{padding:12px 14px 14px}
+  .sw b{display:block;font-size:.95rem}
+  .sw code{font-family:ui-monospace,Consolas,monospace;font-size:.85rem;color:var(--antique);font-weight:700;cursor:pointer}
+  .sw code:hover{text-decoration:underline}
+  .sw small{display:block;color:var(--grey);font-size:.78rem;margin-top:4px}
+  .ramp{display:flex;border-radius:16px;overflow:hidden;height:70px;box-shadow:0 6px 18px rgba(6,19,42,.08)}
+  .ramp div{flex:1}
+  .pairs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+  .pair{border-radius:16px;padding:20px;border:1px solid var(--mist)}
+  .pair h3{font-family:Cinzel,serif;font-size:1.1rem;letter-spacing:.04em}
+  .pair p{font-size:.84rem;margin-top:4px}
+  .pair span{display:inline-block;margin-top:12px;font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.14)}
+  .rules{background:var(--white);border:1px solid var(--mist);border-radius:16px;padding:20px 24px;margin-bottom:50px}
+  .rules li{margin:6px 0 6px 18px;font-size:.9rem}
+  .toast{position:fixed;left:50%;bottom:20px;translate:-50% 0;background:var(--royal);color:var(--champagne);padding:8px 16px;border-radius:999px;font-size:.82rem;font-weight:600;opacity:0;transition:.3s}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="top">
+  <div class="wrap">
+    <img src="assets/logo-full.jpg" alt="Sparkle Empire logo">
+    <h1>COLOUR PALETTE</h1>
+    <p>Taken from the Sparkle Empire business cards and logo: deep navy card stock with gold foil.</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <h2>Navy: the card background</h2>
+  <p class="lead">Sampled from the navy card background. Use for headers on dark sections, tiles, footer and text on light backgrounds.</p>
+  <div class="grid" id="navy"></div>
+
+  <h2>Gold: the foil logo and lettering</h2>
+  <p class="lead">Sampled from the gold foil, from its shadows to its shine. Use for buttons, icons, highlights and hover effects.</p>
+  <div class="grid" id="gold"></div>
+
+  <h2>Neutrals: light backgrounds and text</h2>
+  <p class="lead">Light colours that keep the page clean and let the navy and gold stand out.</p>
+  <div class="grid" id="neutral"></div>
+
+  <h2>Gold foil gradient</h2>
+  <p class="lead">Antique to Empire to Champagne Gold: the metallic look used on buttons and hover states.</p>
+  <div class="ramp"><div style="background:linear-gradient(90deg,#A8853E,#C9A04A 45%,#F1DC96)"></div></div>
+
+  <h2>Approved pairings</h2>
+  <p class="lead">Text and background combinations that read clearly.</p>
+  <div class="pairs">
+    <div class="pair" style="background:var(--royal);color:var(--champagne)"><h3>Champagne on Royal Navy</h3><p style="color:var(--soft)">Headings and body text on dark sections.</p><span>Main dark style</span></div>
+    <div class="pair" style="background:var(--white);color:var(--royal)"><h3>Royal Navy on White</h3><p style="color:var(--grey)">Header, menus and page text.</p><span style="background:var(--mist)">Main light style</span></div>
+    <div class="pair" style="background:linear-gradient(135deg,#F1DC96,#C9A04A 55%,#A8853E);color:var(--midnight)"><h3>Midnight on Gold</h3><p>Buttons, badges and hover pop-ups.</p><span style="background:rgba(6,19,42,.12)">Buttons</span></div>
+    <div class="pair" style="background:var(--ivory);color:var(--royal)"><h3>Royal Navy on Ivory</h3><p style="color:var(--grey)">Soft sections and strips.</p><span style="background:var(--mist)">Sections</span></div>
+  </div>
+
+  <h2>How to use it</h2>
+  <ul class="rules">
+    <li>Only navy and gold carry the brand. Don't add other colours (red, green, purple) for decoration.</li>
+    <li>About 60% white/ivory, 30% navy, 10% gold. Gold works best as an accent.</li>
+    <li>Never put gold text on white or ivory; it's too light to read. Use Royal Navy there, and Antique Gold only for small labels.</li>
+    <li>WhatsApp green (#25D366) is the one exception, and only on WhatsApp buttons so people recognise them.</li>
+  </ul>
+</div>
+<div class="toast" id="toast">Copied</div>
+
+<script>
+const C = {
+  navy:[
+    ['Midnight Navy','#06132A','Deepest shade of the card. Top bar, footer, text on gold.'],
+    ['Royal Navy','#0B1F3A','Main brand navy. Headings on light pages, tiles, dark sections.'],
+    ['Card Navy','#112B46','Back of the business card. Tiles and gradients.'],
+    ['Slate Navy','#22344C','Lightest navy. Gradient tops and soft dark panels.']
+  ],
+  gold:[
+    ['Antique Gold','#A8853E','Gold in shadow. Small labels on light backgrounds, gradient ends.'],
+    ['Empire Gold','#C9A04A','Main gold. Buttons, icons, borders.'],
+    ['Soft Gold','#D8C195','Muted gold. Body text on navy.'],
+    ['Champagne Gold','#F1DC96','Gold highlight. Headings and icons on navy.']
+  ],
+  neutral:[
+    ['White','#FFFFFF','Main page and card background.'],
+    ['Ivory','#FBF7EE','Soft section backgrounds.'],
+    ['Gold Mist','#EFE6D2','Borders and dividers.'],
+    ['Warm Grey','#6E6857','Secondary text on light backgrounds.']
+  ]
+};
+const dark = h => { const n = parseInt(h.slice(1),16), r=n>>16, g=n>>8&255, b=n&255; return (r*299+g*587+b*114)/1000 < 140; };
+for (const k in C) document.getElementById(k).innerHTML = C[k].map(([n,h,u]) =>
+  `<div class="sw"><div class="chip" style="background:${h};color:${dark(h)?'#F1DC96':'#0B1F3A'}${h==='#FFFFFF'?';border-bottom:1px solid #EFE6D2':''}">${n.toUpperCase()}</div><div class="info"><b>${n}</b><code title="Click to copy">${h}</code><small>${u}</small></div></div>`).join('');
+document.addEventListener('click', e => { const c = e.target.closest('code'); if (!c) return;
+  try { navigator.clipboard.writeText(c.textContent); } catch (err) {}
+  const t = document.getElementById('toast'); t.textContent = 'Copied ' + c.textContent; t.classList.add('show'); setTimeout(() => t.classList.remove('show'), 1400); });
+</script>
+</body>
+</html>
